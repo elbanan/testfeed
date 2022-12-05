@@ -84,8 +84,8 @@ WSGI_APPLICATION = "radfeed.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-if os. getenv ("DATABASE _URL", "") != "":
-    r = urlparse(os.environ.get ("DATABASE URL"))
+if os. getenv ("DATABASE_URL", "") != "":
+    r = urlparse(os.environ.get ("DATABASE_URL"))
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresq1_psycopg?",
