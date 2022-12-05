@@ -1,0 +1,41 @@
+{% extends 'feed/base.html' %}
+
+{% block content %}
+{% load widget_tweaks %}
+<form id="sign_up" method="POST">{% csrf_token %}
+    <div class="msg">Start a New Membership</div>
+    <div class="input-group"> <span class="input-group-addon">
+              <i class="material-icons">email</i>
+          </span>
+        <div class="form-line">{% render_field page_content.registerform.username class="form-control" placeholder="Email address (this will be your username)" %}</div>
+    </div>
+    <div class="input-group"> <span class="input-group-addon">
+              <i class="material-icons">person</i>
+          </span>
+        <div class="form-line">{% render_field page_content.registerform.first_name class="form-control" placeholder="Enter your first name" %}</div>
+    </div>
+    <div class="input-group"> <span class="input-group-addon">
+              <i class="material-icons">person</i>
+          </span>
+        <div class="form-line">{% render_field page_content.registerform.last_name class="form-control" placeholder="Enter your last name" %}</div>
+    </div>
+    <div class="input-group"> <span class="input-group-addon">
+              <i class="material-icons">lock</i>
+          </span>
+        <div class="form-line">{% render_field page_content.registerform.password1 class="form-control" placeholder="Choose your password" %}</div>
+    </div>
+    <div class="input-group"> <span class="input-group-addon">
+              <i class="material-icons">lock</i>
+          </span>
+        <div class="form-line">{% render_field page_content.registerform.password2 class="form-control" placeholder="Confirm your password" %}</div>
+    </div>
+    <div class="form-group" style="text-align: center;">
+        <input type="checkbox" name="tos" value="True" id="tos" class="filled-in chk-col-pink">
+        <label for="tos">I read and agree to the <a data-toggle="modal" data-color="green" data-target="#TOSModal">terms of usage</a>.</label>
+    </div>
+    <button class="btn btn-block btn-lg bg-green waves-effect" type="submit">SIGN UP</button>
+    <div class="m-t-25 m-b--5 align-center">Already a Member? Log in <a href="\login\">HERE</a>
+    </div>
+</form>
+
+{% endblock %}
